@@ -11,7 +11,6 @@ import qa.util.ZipUtils;
 import java.io.IOException;
 import java.util.Properties;
 
-//comment
 @CucumberOptions(
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
