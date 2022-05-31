@@ -13,4 +13,4 @@ Feature: Test Execution - Sample
   Scenario: Verify the Get a Quote button
     Given user is on insurepro landing page
     And click on the Get A Quote button
-    Then user should navigate to the next page and title should be "InsurePro - Name"
+    Then user should navigate to the next page and title should be "InsurePro - State"
