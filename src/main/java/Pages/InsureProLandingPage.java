@@ -46,7 +46,7 @@ public class InsureProLandingPage {
         return driver.getTitle();
     }
 
-    public  void getFullNamePage(){
+    public  void getStatePage(){
         driver.get(prop.getProperty("baseURL"));
         driver.findElement(quoteButton).click();
     }
