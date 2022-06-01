@@ -20,14 +20,14 @@ import java.util.Properties;
         monochrome = false,
         glue = {"Steps", "AppHooks"},
         //tags = "@Smoke",
-        features = {"src/test/resources/Features/InsureProLandingPage.feature"}
+        features = {"src/test/resources/Features/StatePage.feature"}
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
     Properties prop;
 
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }
