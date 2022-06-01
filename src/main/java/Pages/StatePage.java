@@ -12,7 +12,7 @@ public class StatePage {
     private Properties prop;
 
     //1. By Locators:
-    private By stateDropdown = By.cssSelector("//*[@id=\"form\"]/div[2]/div/div/div/div[1]/div[2]");
+    private By stateDropdown = By.xpath("//*[@id=\"form\"]/div[2]/div/div/div/div[1]/div[2]");
     private By stateContinueBtn = By.xpath("//*[@id=\"footer\"]/div/button");
 
     //2. Constructor of the page class:
