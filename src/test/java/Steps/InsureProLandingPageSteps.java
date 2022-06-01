@@ -45,6 +45,6 @@ public class InsureProLandingPageSteps {
 
     @Then("user should navigate to the next page and title should be {string}")
     public void userShouldNavigateToTheNextPageAndTitleShouldBe(String expNxtPgTitle) {
-        Assert.assertTrue(insureProLandingPage.getNamePageTitle().contains(expNxtPgTitle));
+        Assert.assertTrue(insureProLandingPage.getStatePageTitle().contains(expNxtPgTitle));
     }
 }

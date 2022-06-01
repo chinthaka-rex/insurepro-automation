@@ -2,17 +2,21 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import qa.util.ConfigReader;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class InsureProLandingPage {
     private WebDriver driver;
     private Properties prop;
 
     //1. By Locators:
-    private By languageLink = By.xpath("//*[@id=\"footer\"]/div/button");
-    private By quoteButton = By.xpath("//*[@id=\"footer\"]/button");
+    private By languageLink = By.xpath("//*[@id=\"footer\"]/div/div/button");
+    private By quoteButton = By.xpath("//*[@id=\"footer\"]/div/button");
 
     //2. Constructor of the page class:
     public InsureProLandingPage(WebDriver driver) {
@@ -42,7 +46,9 @@ public class InsureProLandingPage {
         driver.findElement(quoteButton).click();
     }
 
-    public String getNamePageTitle() {
+    public String getStatePageTitle() {
+        WebDriverWait wait=new WebDriverWait(driver, 100);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"footer\"]/div/button")));
         return driver.getTitle();
     }
 
