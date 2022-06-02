@@ -32,10 +32,12 @@ public class StatePageSteps {
 
     @And("insurepro state page should contain {string} dropdown")
     public void insureproStatePageShouldContainDropdown(String expDropdownName) {
+        Assert.assertTrue(statePage.getStateDropDownName().contains(expDropdownName));
     }
 
     @And("insurepro state page should contain {string} button")
     public void insureproStatePageShouldContainButton(String expConBtnName) {
+        Assert.assertTrue(statePage.getStateContinueBtnName().contains(expConBtnName));
     }
 
     @Then("select {string} as the state")
