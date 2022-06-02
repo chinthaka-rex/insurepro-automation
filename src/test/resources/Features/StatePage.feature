@@ -7,7 +7,7 @@ Feature: State page features
     And insurepro state page should contain "Search for State" dropdown
     And insurepro state page should contain "Continue" button
 
-  Scenario: Verify the Continue button on the state page
+  Scenario: Verify the State dropdown and the Continue button on the state page
     Given user is on insurepro state page
     Then select "Florida" as the state
     And click on the Continue button on the insurepro state page
