@@ -11,7 +11,7 @@ import qa.factory.DriverFactory;
 
 public class StatePageSteps {
     private static String title;
-    private StatePage statePage = new StatePage(DriverFactory.getDriver());
+    private final StatePage statePage = new StatePage(DriverFactory.getDriver());
 
     @Given("user is on insurepro state page")
     public void userIsOnInsureproStatePage() {
@@ -21,13 +21,12 @@ public class StatePageSteps {
 
     @When("user gets the title of the insurepro state page")
     public void userGetsTheTitleOfTheInsureproStatePage() {
-        DriverFactory.getDriver().get(statePage.setInsureProLandingPageURL());
+        title = statePage.getInsureProStatePageTitle();
+        System.out.println("Page title is : " + title);
     }
 
     @When("insurepro state page title should be {string}")
     public void insureproStatePageTitleShouldBe(String expTitle) {
-        title = statePage.getInsureProStatePageTitle();
-        System.out.println("Page title is : " + title);
         Assert.assertTrue(title.contains(expTitle));
     }
 

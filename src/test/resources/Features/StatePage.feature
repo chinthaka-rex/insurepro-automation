@@ -1,4 +1,4 @@
-Feature: Test Execution - Sample
+Feature: State page features
 
   Scenario: Verify the elements on the InsurePro landing page
     Given user is on insurepro state page
@@ -11,4 +11,4 @@ Feature: Test Execution - Sample
     Given user is on insurepro state page
     Then select "Florida" as the state
     And click on the Continue button on the insurepro state page
-    Then user should navigate from state page to the next page and title should be "InsurePro - State"
+    Then user should navigate from state page to the next page and title should be "Profession"

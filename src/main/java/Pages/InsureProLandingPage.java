@@ -11,12 +11,12 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class InsureProLandingPage {
-    private WebDriver driver;
-    private Properties prop;
+    private final WebDriver driver;
+    private final Properties prop;
 
     //1. By Locators:
-    private By languageLink = By.xpath("//*[@id=\"footer\"]/div/div/button");
-    private By quoteButton = By.xpath("//*[@id=\"footer\"]/div/button");
+    private final By languageLink = By.xpath("//*[@id=\"footer\"]/div/div/button");
+    private final By quoteButton = By.xpath("//*[@id=\"footer\"]/div/button");
 
     //2. Constructor of the page class:
     public InsureProLandingPage(WebDriver driver) {
@@ -46,9 +46,9 @@ public class InsureProLandingPage {
         driver.findElement(quoteButton).click();
     }
 
-    public String getStatePageTitle() {
-        WebDriverWait wait=new WebDriverWait(driver, 100);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"footer\"]/div/button")));
+    public String getStatePageTitle(String expNxtPgTitle) {
+        WebDriverWait wait=new WebDriverWait(driver, 50);
+        wait.until(ExpectedConditions.titleIs(expNxtPgTitle));
         return driver.getTitle();
     }
 
