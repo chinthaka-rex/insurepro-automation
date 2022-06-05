@@ -4,13 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import qa.util.ConfigReader;
 
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class StatePage {
     private final WebDriver driver;
@@ -38,7 +36,8 @@ public class StatePage {
         return driver.findElement(stateDropdown).getText();
     }
 
-    public String getStateContinueBtnName(){
+    public String getStateContinueBtnName() throws InterruptedException {
+        Thread.sleep(500);
         return driver.findElement(stateContinueBtn).getText();
     }
 
@@ -54,5 +53,12 @@ public class StatePage {
 
     public void clickOnTheContinueBtnOnStatePage(){
         driver.findElement(stateContinueBtn).click();
+    }
+
+    public void getProfessionPage(){
+        driver.get(prop.getProperty("baseURL"));
+        driver.findElement(By.xpath("//*[@id=\"footer\"]/div/button")).click();
+        selectState("Florida");
+        clickOnTheContinueBtnOnStatePage();
     }
 }
