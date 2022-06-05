@@ -36,7 +36,7 @@ public class StatePageSteps {
     }
 
     @And("insurepro state page should contain {string} button")
-    public void insureproStatePageShouldContainButton(String expConBtnName) {
+    public void insureproStatePageShouldContainButton(String expConBtnName) throws InterruptedException {
         Assert.assertTrue(statePage.getStateContinueBtnName().contains(expConBtnName));
     }
 
