@@ -39,7 +39,8 @@ public class ProfessionPageSteps {
     }
 
     @Then("select {string} as the profession")
-    public void selectAsTheProfession(String arg0) {
+    public void selectAsTheProfession(String profName) {
+        professionPage.selectProfession(profName);
     }
 
     @And("click on the Continue button on the insurepro profession page")
