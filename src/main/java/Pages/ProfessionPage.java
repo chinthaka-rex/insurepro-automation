@@ -34,4 +34,12 @@ public class ProfessionPage {
         driver.findElement(professionDropDown).sendKeys(profName);
         driver.findElement(ddFirstElement).click();
     }
+
+    public void clickOnTheContinueBtnOnProfPage() {
+        driver.findElement(profContinueBtn).click();
+    }
+
+    public String getLookingForInsurancePgName() {
+        return driver.getTitle();
+    }
 }
