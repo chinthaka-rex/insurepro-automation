@@ -45,9 +45,11 @@ public class ProfessionPageSteps {
 
     @And("click on the Continue button on the insurepro profession page")
     public void clickOnTheContinueButtonOnTheInsureproProfessionPage() {
+        professionPage.clickOnTheContinueBtnOnProfPage();
     }
 
     @Then("user should navigate from profession page to the next page and title should be {string}")
-    public void userShouldNavigateFromProfessionPageToTheNextPageAndTitleShouldBe(String arg0) {
+    public void userShouldNavigateFromProfessionPageToTheNextPageAndTitleShouldBe(String expNxtPageTitle) {
+        Assert.assertTrue(professionPage.getLookingForInsurancePgName().contains(expNxtPageTitle));
     }
 }
