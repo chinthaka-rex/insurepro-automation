@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import qa.factory.DriverFactory;
 import qa.util.ConfigReader;
 
 import java.util.List;
@@ -71,8 +72,9 @@ public class StatePage {
     }
 
     public void getProfessionPage(){
-        driver.get(prop.getProperty("baseURL"));
-        driver.findElement(By.xpath("//*[@id=\"footer\"]/div/button")).click();
+        InsureProLandingPage insureProLandingPage = new InsureProLandingPage(DriverFactory.getDriver());
+        insureProLandingPage.getStatePage();
+        insureProLandingPage.clickOnTheQuoteButton();
         selectState("Florida");
         clickOnTheContinueBtnOnStatePage();
     }

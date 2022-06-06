@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import qa.factory.DriverFactory;
 import qa.util.ConfigReader;
 
 import java.util.Properties;
@@ -41,5 +42,16 @@ public class ProfessionPage {
 
     public String getLookingForInsurancePgName() {
         return driver.getTitle();
+    }
+
+    public void getWhyAreYouLookingForInsurancePage(){
+        InsureProLandingPage insureProLandingPage = new InsureProLandingPage(DriverFactory.getDriver());
+        insureProLandingPage.getStatePage();
+        insureProLandingPage.clickOnTheQuoteButton();
+        StatePage statePage = new StatePage(DriverFactory.getDriver());
+        statePage.selectState("Florida");
+        statePage.clickOnTheContinueBtnOnStatePage();
+        selectProfession("House Cleaning");
+        clickOnTheContinueBtnOnProfPage();
     }
 }
