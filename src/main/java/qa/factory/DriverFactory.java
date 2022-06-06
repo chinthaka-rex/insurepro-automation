@@ -30,17 +30,17 @@ public class DriverFactory {
             tlDriver.set(new SafariDriver());
         } else if (bro.equals("browserstack")) {
             DesiredCapabilities caps = new DesiredCapabilities();
-//            caps.setCapability("os", "OS X");
-//            caps.setCapability("os_version", "Monterey");
-//            caps.setCapability("browser", "Safari");
-//            caps.setCapability("browser_version", "15.1");
-//            caps.setCapability("browserstack.local", "false");
-
-            caps.setCapability("os_version", "14");
-            caps.setCapability("device", "iPhone 12");
-            caps.setCapability("real_mobile", "true");
-            caps.setCapability("browserstack.local", "false");
+            caps.setCapability("os", "OS X");
+            caps.setCapability("os_version", "Monterey");
             caps.setCapability("browser", "Safari");
+            caps.setCapability("browser_version", "15.1");
+            caps.setCapability("browserstack.local", "false");
+
+//            caps.setCapability("os_version", "14");
+//            caps.setCapability("device", "iPhone 12");
+//            caps.setCapability("real_mobile", "true");
+//            caps.setCapability("browserstack.local", "false");
+//            caps.setCapability("browser", "Safari");
 
             URL bsURL = new URL(bStackURL);
             tlDriver.set(new RemoteWebDriver(bsURL, caps));

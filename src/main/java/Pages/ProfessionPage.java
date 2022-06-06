@@ -13,7 +13,9 @@ public class ProfessionPage {
     private final Properties prop;
 
     //1. By Locators:
-    private final By professionDropdown = By.xpath("//*[@id=\"form\"]/div[3]/div[1]/div/div/div[1]/div[2]");
+    private final By professionDD = By.xpath("//*[@id=\"form\"]/div[3]/div[1]/div/div/div[1]/div[2]");
+    private final By professionDropDown = By.xpath("//*[@id=\"react-select-3-input\"]");
+    private final By ddFirstElement = By.xpath("//*[@id=\"react-select-3-listbox\"]");
     private final By profContinueBtn = By.xpath("//*[@id=\"footer\"]/div/button");
 
     //2. Constructor of the page class:
@@ -25,8 +27,11 @@ public class ProfessionPage {
 
     //3. Page Actions: features(behavior) of the page the form of methods:
     public String getInsureProProfessionPageTitle() {
-//        WebDriverWait wait=new WebDriverWait(driver, 50);
-//        wait.until(ExpectedConditions.titleIs("Profession"));
         return driver.getTitle();
+    }
+
+    public void selectProfession(String profName) {
+        driver.findElement(professionDropDown).sendKeys(profName);
+        driver.findElement(ddFirstElement).click();
     }
 }
