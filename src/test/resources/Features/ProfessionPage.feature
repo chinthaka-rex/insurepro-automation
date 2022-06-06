@@ -8,7 +8,7 @@ Feature: Profession page features
     And insurepro profession page should contain "Search for Profession" dropdown
     And insurepro profession page should contain "Continue" button
 
-  @TEST_IM-642 @TestCase @Smoke
+  @TEST_IM-642 @TestCase
   Scenario: Verify the profession dropdown and the Continue button on the profession page
     Given user is on insurepro profession page
     Then select "House Cleaning" as the profession
